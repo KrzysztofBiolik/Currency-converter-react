@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Result } from "./Result";
 import { currencies } from "../currencies";
 import "./style.css";
 
 export const Form = () => {
+    const [currency, setCurrency] = useState(currencies[0].short);
+    const [amount, setAmount] = useState("");
 
     return (
         <form className="form" >
@@ -15,6 +18,8 @@ export const Form = () => {
                         Kwota w zł*:
                     </span>
                     <input className="form__field"
+                        value={amount}
+                        onChange={({ target }) => setAmount(target.value)}
                         type="number"
                         required
                         step="0.01"
@@ -29,6 +34,8 @@ export const Form = () => {
                     </span>
                     <select
                         className="form__field"
+                        value={currency}
+                        onChange={({ target }) => setCurrency(target.value)}
                     >
                         {currencies.map((currency => (
                             <option
