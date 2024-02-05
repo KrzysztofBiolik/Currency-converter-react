@@ -3,12 +3,17 @@ import { Result } from "./Result";
 import { currencies } from "../currencies";
 import "./style.css";
 
-export const Form = () => {
+export const Form = ({calculateResult, result}) => {
     const [currency, setCurrency] = useState(currencies[0].short);
     const [amount, setAmount] = useState("");
 
+    const onSubmit = (event) => {
+        event.preventDefault();
+        calculateResult(currency, amount);
+    }
+
     return (
-        <form className="form" >
+        <form className="form" onSubmit={onSubmit}>
             <h1 className="header">
                 Kalkulator walut
             </h1>
@@ -51,7 +56,7 @@ export const Form = () => {
             <p>
                 <button className="form__button">Przelicz!</button>
             </p>
-            <Result />
+            <Result result={result} />
         </form >
     )
 };
