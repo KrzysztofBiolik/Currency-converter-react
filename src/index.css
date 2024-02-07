@@ -12,6 +12,6 @@ html {
   align-items: center;
   min-height: 100vh;
   font-family: 'Lato', sans-serif;
-  background-image:url(background.jpg);
+  background-image:url(images/background.jpg);
   background-size:contain ;
 }
