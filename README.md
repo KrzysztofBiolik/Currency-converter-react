@@ -12,7 +12,7 @@ You can see how the currency converter works in the gif below.
 
 You can try for yourself how the currency exchange works at this link.
 
-[Currency converter link]()
+[Currency converter link](https://krzysztofbiolik.github.io/Currency-converter-react/)
 
 ## What does it allow?
 
