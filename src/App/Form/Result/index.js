@@ -1,4 +1,4 @@
-import "./style.css";
+import { Container } from "./styled";
 
 
 export const Result = ({ result }) => {
@@ -7,7 +7,7 @@ export const Result = ({ result }) => {
     }
 
     return (
-        <container>
+        <Container>
             {result.sourceAmount < 0 ?
                 (
                     "Nie można przeliczać ujemnych kwot"
@@ -22,7 +22,7 @@ export const Result = ({ result }) => {
                         </strong>
                     </>
                 )}
-        </container>
+        </Container>
     );
 };
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Result } from "./Result";
 import { currencies } from "../currencies";
-import "./style.css";
+import { StyledForm, Header, LabelText, Field, Button } from "./styled";
 
 export const Form = () => {
     const [currency, setCurrency] = useState(currencies[0].short);
@@ -24,19 +24,17 @@ export const Form = () => {
         });
     }
 
-
-
     return (
-        <form className="form" onSubmit={onSubmit}>
-            <h1 className="header">
+        <StyledForm onSubmit={onSubmit}>
+            <Header>
                 Kalkulator walut
-            </h1>
+            </Header>
             <p>
                 <label>
-                    <span className="form__labelText">
+                    <LabelText>
                         Kwota w zł*:
-                    </span>
-                    <input className="form__field"
+                    </LabelText>
+                    <Field
                         value={amount}
                         onChange={({ target }) => setAmount(target.value)}
                         type="number"
@@ -48,11 +46,11 @@ export const Form = () => {
             </p>
             <p>
                 <label>
-                    <span className="form__labelText">
+                    <LabelText>
                         Waluta:
-                    </span>
-                    <select
-                        className="form__field"
+                    </LabelText>
+                    <Field 
+                    as="select"
                         value={currency}
                         onChange={({ target }) => setCurrency(target.value)}
                     >
@@ -64,13 +62,13 @@ export const Form = () => {
                                 {currency.name}
                             </option>
                         )))}
-                    </select>
+                    </Field>
                 </label>
             </p >
             <p>
-                <button className="form__button">Przelicz!</button>
+                <Button>Przelicz!</Button>
             </p>
             <Result result={result} />
-        </form >
+        </StyledForm >
     )
 };
