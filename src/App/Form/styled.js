@@ -45,3 +45,9 @@ export const Button = styled.button`
     }
 `;
 
+export const Loading = styled.p`
+    color: green;
+`;
+export const Failure = styled.p`
+    color: red;
+`;
