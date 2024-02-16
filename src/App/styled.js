@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     flex-basis:700px;
+    min-height: 390px;
     margin: 20px;
     padding: 0 20px;
     background-color: ${({theme}) => theme.color.beige};
