@@ -33,13 +33,13 @@ export const Form = () => {
             {ratesData.state === "loading"
                 ? (
                     <Loading>
-                        Sekundka
+                        Trwa wczytywanie kursów walut z Europejskiego Banku Centralnego
                     </Loading>
                 )
                 : (
                     ratesData.state === "error" ? (
                         <Failure>
-                            Coś poszło nie tak
+                            Coś poszło nie tak. Sprawdź połączenie z internetem
                         </Failure>
                     ) : (
                         <>

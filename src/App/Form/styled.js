@@ -47,7 +47,11 @@ export const Button = styled.button`
 
 export const Loading = styled.p`
     color: green;
+    text-align: center;
+    font-size: 30px;
 `;
 export const Failure = styled.p`
     color: red;
+    text-align: center;
+    font-size: 30px;
 `;
