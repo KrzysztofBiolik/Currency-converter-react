@@ -1,25 +1,21 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 
 export const useRatesData = () => {
     const [ratesData, setRatesData] = useState({
-        state: "loading",
+        state: "loading", 
     });
 
     useEffect(() => {
-        const fetchRates = async () => {
+        const axiosRates = async () => { 
             try {
-                const response = await fetch("");
+                const response = await axios.get("api.json");
 
-                if (!response.ok) {
-                    throw new Error(response.statusText);
-                }
-
-                const { meta, data } = await response.json();
+                const {data}  =  response.data;
 
                 setRatesData({
                     state: "success",
-                    meta,
                     data,
                 });
 
@@ -30,7 +26,7 @@ export const useRatesData = () => {
             }
         };
 
-        setTimeout(fetchRates, 1000);
+        setTimeout(axiosRates, 1000);
     }, []);
 
     return ratesData;
