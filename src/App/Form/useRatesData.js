@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import {getAPIData} from "./useGetAPICurrencyRatesData"
 
 
 export const useRatesData = () => {
@@ -10,9 +10,8 @@ export const useRatesData = () => {
     useEffect(() => {
         const axiosRates = async () => { 
             try {
-                const response = await axios.get("api.json");
 
-                const {data}  =  response.data;
+                const {data} = await getAPIData();
 
                 setRatesData({
                     state: "success",
